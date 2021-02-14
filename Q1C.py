@@ -47,23 +47,31 @@ class TestGenes:
             threshold = 4.000 # Number of standard deviations
             p = 0.0001 # In this scenario we are saying that there is more than a 1/10000 change that a certain gene expresses
             rows = len(df)
+            count1 = 0
+            count2 = 0
+            columns = len(df.columns)
             name = ""
             zStat = 0
             sampleNumber = "sample_"
             sampleList = []
             populationList = []
-            columns = len(df.columns)
-            ab = df[0:1]
-            bac = ab.values.tolist()
-            name = bac[0][0]
-            populationList = bac[0][1:columns]
-            for x in range(1, columns):
-                sampleList = bac[0][x:x+1]
-                zStat = self.calculateZStat(sampleList, populationList)
-                if(zStat > p or zStat < -p):
-                    print(name + " of " + sampleNumber + " " + str(x) + " " + "is a bad gene with greater than the change of 1/10000 of expressing with a Z statistic of " + str(zStat))
-                else:
-                    print("This gene is a good gene with lower than the change of 1/10000 of expressing with a Z statistic of " + str(zStat))
+            for i in range(0, rows):
+                ab = df[i:i+1]
+                bac = ab.values.tolist()
+                populationList = bac[0][1:columns]
+                name = bac[0][0]
+
+                for x in range(1, columns):
+                    sampleList = bac[0][x:x+1]
+                    zStat = self.calculateZStat(sampleList, populationList)
+                    if(abs(zStat) < p):
+                        print(name + " of " + sampleNumber + " " + str(x-1) + " " + "is a bad gene with smaller than the change of 1/10000 of expressing with a Z statistic of " + str(zStat))
+                        count1+=1
+                    else:
+                        print(name + " of " + sampleNumber + " " + str(x-1) + " " + "is a good gene with greater than the change of 1/10000 of expressing with a Z statistic of " + str(zStat))
+                        count2+=1
+            print(count1)
+            print(count2)
 
     def __init__(self):
         self.data = pd.read_csv(r'/home/romiovictor123/Desktop/EDIT/EDITInternship/technical_data/1_c_d.csv')
