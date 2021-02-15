@@ -53,10 +53,10 @@ def calculateZStat(sampleList, populationList):
 
     #Next calculate Z statistic
     zStat = (sampleMean - populationMean)/(populationStandardDeviation/math.sqrt(populationSize))
-    if(zStat < p):
-        print("This gene is a bad gene with greater than the change of 1/10000 of expressing with a Z statistic of " + str(zStat))
+    if(abs(zStat) > threshold):
+        print("This gene is a bad gene with greater than the change of " + str(p) + " of expressing with a Z statistic of " + str(zStat))
     else:
-        print("This gene is a good gene with lower than the change of 1/10000 of expressing with a Z statistic of " + str(zStat))
+        print("This gene is a good gene with smaller than the change of " + str(p) + " of expressing with a Z statistic of " + str(zStat))
 
 sampleList = [0, 4.7234714 , 6.29537708, 8.04605971, 4.53169325, 
 4.53172609, 8.15842563, 6.53486946, 4.06105123, 6.08512009]
