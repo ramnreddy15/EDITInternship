@@ -58,7 +58,7 @@ class TestGenes:
             print(f"Number of good genes is {count2}")
 
     def __init__(self):
-        self.data = pd.read_csv(r'/home/romiovictor123/Desktop/EDIT/EDITInternship/technical_data/1_c_d.csv')
+        self.data = pd.read_csv(r'/home/romiovictor123/Desktop/EDIT/technical_data/1_c_d.csv')
 
 test = TestGenes()
 

@@ -12,8 +12,8 @@ def makeGraphs(data1, data2):
     plt.title(labels[0] + " vs. " + labels[1])
     plt.show()
 
-data1 = pd.read_csv(r'/home/romiovictor123/Desktop/EDIT/EDITInternship/technical_data/1_c_d.csv')
-data2 = pd.read_csv(r'/home/romiovictor123/Desktop/EDIT/EDITInternship/technical_data/1_c_d.csv')
+data1 = pd.read_csv(r'/home/romiovictor123/Desktop/EDIT/technical_data/1_c_d.csv')
+data2 = pd.read_csv(r'/home/romiovictor123/Desktop/EDIT/technical_data/1_c_d.csv')
 
 print("Select which genes you want to see in a graph.")
 print("Selectable genes: gene_0, gene_1, gene_2, gene_3, gene_4, gene_5, gene_6, gene_7")
