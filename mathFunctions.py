@@ -13,7 +13,7 @@ def calculateStatistics(listOne):
     #Calculates sample standard deviation of list
     for i in range(0, size): #First calculates variance
         standardDeviation += pow((listOne[i] - sampleMean), 2)
-    standardDeviation = standardDeviation/(size-1)
+    standardDeviation = standardDeviation/(size)
     standardDeviation = math.sqrt(standardDeviation)
 
     return sampleMean, standardDeviation, size
@@ -21,7 +21,7 @@ def calculateStatistics(listOne):
 
 """Q1 B"""
 """This method return true if the means have a statistically significant differnece"""
-def calculateStatisticsPopulation(listOne):
+def calculateStatisticsSample(listOne):
     populationMean = 0.0
     standardDeviation = 0.0
     size = len(listOne)
@@ -32,7 +32,7 @@ def calculateStatisticsPopulation(listOne):
     #Calculates sample standard deviation of list
     for i in range(0, size): #First calculates variance
         standardDeviation += pow((listOne[i] - populationMean), 2)
-    standardDeviation = standardDeviation/(size)
+    standardDeviation = standardDeviation/(size-1)
     standardDeviation = math.sqrt(standardDeviation)
 
     return populationMean, standardDeviation, size
