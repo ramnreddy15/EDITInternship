@@ -45,16 +45,16 @@ def calculateZStat(sampleList, populationList):
     else:
         print("This gene is a good gene with smaller than the change of " + str(p) + " of expressing with a Z statistic of " + str(zStat))
 
-sampleList = [0, 4.7234714 , 6.29537708, 8.04605971, 4.53169325, 
-4.53172609, 8.15842563, 6.53486946, 4.06105123, 6.08512009]
+# sampleList = [0, 4.7234714 , 6.29537708, 8.04605971, 4.53169325, 
+# 4.53172609, 8.15842563, 6.53486946, 4.06105123, 6.08512009]
     
-populationList = [0, 4.7234714 , 6.29537708, 8.04605971, 4.53169325, 
-4.53172609, 8.15842563, 6.53486946, 4.06105123, 6.08512009]
+# populationList = [0, 4.7234714 , 6.29537708, 8.04605971, 4.53169325, 
+# 4.53172609, 8.15842563, 6.53486946, 4.06105123, 6.08512009]
 
-populationMean, populationStandardDeviation, populationSize = calculateStatistics(populationList, "population")
+# populationMean, populationStandardDeviation, populationSize = calculateStatistics(populationList, "population")
 
-print(populationMean)
-print(populationStandardDeviation)
-print(populationSize)
+# print(populationMean)
+# print(populationStandardDeviation)
+# print(populationSize)
 
 # calculateZStat(sampleList, populationList)
